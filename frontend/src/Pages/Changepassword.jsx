@@ -15,10 +15,10 @@ export const Changepassword = () => {
         
             
                 
-        <div class="mb-3 row">
-                <label for="staticEmail" class="col-sm-2 col-form-label">Email</label>
-                <div class="col-sm-10">
-                <input type="text" readonly class="form-control" id="staticEmail" />
+        <div className="mb-3 row">
+                <label for="staticEmail" className="col-sm-2 col-form-label">Email</label>
+                <div className="col-sm-10">
+                <input type="text" readonly className="form-control" id="staticEmail" />
                 </div>
             </div>
                 

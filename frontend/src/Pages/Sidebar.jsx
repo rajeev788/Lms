@@ -11,7 +11,7 @@ export const Sidebar = () => {
                     <Link  className='list-group-item list-group-item-action' to="/recommended-courses">Recommended coures</Link>
                     <Link  className='list-group-item list-group-item-action' to="/profile-settings">Profile settings</Link>
                     <Link  className='list-group-item list-group-item-action' to="/change-password">Change password</Link>
-                    <Link  className='list-group-item list-group-item-action text-danger' to="/user-login">Log out</Link>
+                    <Link  className='list-group-item list-group-item-action text-danger' to="/user-login">Logout</Link>
                 </div>
                 </div>
     

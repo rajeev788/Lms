@@ -1,11 +1,17 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { useEffect } from 'react'
+import { Allcourses } from './AllCourses/Allcourses'
 export const Home = () => {
+  useEffect(()=>{
+    document.title='Home Page'
+  })
   return (
     <div className='containe mt-4'>
+      
        {/* latest courser*/}
       <h3 className=' pb-1 mb-4'>latest courses
-        <a href="#" className='float-end'>See all</a>
+        <Link to="/all-courses" className='float-end'>See all</Link>
       </h3>
      
       <div className='row'>
@@ -18,6 +24,7 @@ export const Home = () => {
           </h5>
      
       </div>
+      
     </div>
      </div>
      <div className='col-md-3'>
@@ -29,6 +36,14 @@ export const Home = () => {
           </h5>
      
       </div>
+     
+    </div>
+     </div>
+     <div className='col-md-3'>
+     <div className="card ">
+     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
+     
+     
     </div>
      </div>
      <div className='col-md-3'>
@@ -40,17 +55,7 @@ export const Home = () => {
           </h5>
      
       </div>
-    </div>
-     </div>
-     <div className='col-md-3'>
-     <div className="card ">
-     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
-      <div className="card-body">
-        <h5 className="card-title">
-          <a href='#'>Course title</a>
-          </h5>
-     
-      </div>
+   
     </div>
      </div>
       </div>
@@ -69,6 +74,13 @@ export const Home = () => {
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          <span className='float-end'>views :777</span>
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -80,6 +92,13 @@ export const Home = () => {
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          <span className='float-end'>views :777</span>
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -91,6 +110,13 @@ export const Home = () => {
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          <span className='float-end'>views :777</span>
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -102,13 +128,20 @@ export const Home = () => {
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          <span className='float-end'>views :777</span>
+          </div>
+          
+      </div>
    </div>
     </div>
      </div>
       {/* feature courser*/}
 
-      {/* popular courser*/}
-      <h3 className=' pb-1 my-2'>Popular teachers <a href="#" className='float-end'>See all</a></h3>
+      {/* popular teachers*/}
+      <h3 className=' pb-1 my-2'>Popular teachers <Link to="popular-teachers" className='float-end'>See all</Link></h3>
      
      <div className='row'>
     <div className='col-md-3'>
@@ -116,10 +149,17 @@ export const Home = () => {
     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
      <div className="card-body">
        <h5 className="card-title">
-         <a href='#'>Course title</a>
+         <a href='#'>Teacher Name</a>
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -127,10 +167,17 @@ export const Home = () => {
     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
      <div className="card-body">
        <h5 className="card-title">
-         <a href='#'>Course title</a>
+         <a href='#'>Teacher Name</a>
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -138,10 +185,17 @@ export const Home = () => {
     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
      <div className="card-body">
        <h5 className="card-title">
-         <a href='#'>Course title</a>
+         <a href='#'>Teacher Name</a>
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+        
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -149,14 +203,21 @@ export const Home = () => {
     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
      <div className="card-body">
        <h5 className="card-title">
-         <a href='#'>Course title</a>
+         <a href='#'>Teacher Name</a>
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          
+          </div>
+          
+      </div>
    </div>
     </div>
      </div>
-      {/* popular courser*/}
+      {/* popular teahers*/}
      {/* student testimonials*/}
      <h3 className=' pb-1 my-2'>student testimonials <a href="#" className='float-end'>See all</a></h3>
      
@@ -170,6 +231,13 @@ export const Home = () => {
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          <span className='float-end'>views :777</span>
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -181,6 +249,13 @@ export const Home = () => {
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          <span className='float-end'>views :777</span>
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -192,6 +267,13 @@ export const Home = () => {
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          <span className='float-end'>views :777</span>
+          </div>
+          
+      </div>
    </div>
     </div>
     <div className='col-md-3'>
@@ -203,24 +285,31 @@ export const Home = () => {
          </h5>
     
      </div>
+     <div className='card-footer'>
+        <div className='title'>
+          <span>Rating :4/5</span>
+          <span className='float-end'>views :777</span>
+          </div>
+          
+      </div>
    </div>
     </div>
      </div>
       {/* student courser*/}
 
-      <div id="carouselExampleDark" class="carousel carousel-dark slide bg-dark text-white py-5 ">
+      <div id="carouselExampleDark" className="carousel carousel-dark slide bg-dark text-white py-5 ">
   <div className="carousel-indicators">
-    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+    <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="1" aria-label="Slide 2"></button>
     <button type="button" data-bs-target="#carouselExampleDark" data-bs-slide-to="2" aria-label="Slide 3"></button>
   </div>
   <div className="carousel-inner">
     <div className="carousel-item active" data-bs-interval="10000">
-    <figure class="text-center">
-  <blockquote class="blockquote">
+    <figure className="text-center">
+  <blockquote className="blockquote">
     <p>A well-known quote, contained in a blockquote element.</p>
   </blockquote>
-  <figcaption class="blockquote-footer">
+  <figcaption className="blockquote-footer">
     Someone famous in <cite title="Source Title">Source Title</cite>
   </figcaption>
 </figure>
@@ -230,11 +319,11 @@ export const Home = () => {
       </div>
     </div>
     <div className="carousel-item" data-bs-interval="2000">
-    <figure class="text-center">
-  <blockquote class="blockquote">
+    <figure className="text-center">
+  <blockquote className="blockquote">
     <p>A well-known quote, contained in a blockquote element.</p>
   </blockquote>
-  <figcaption class="blockquote-footer">
+  <figcaption className="blockquote-footer">
     Someone famous in <cite title="Source Title">Source Title</cite>
   </figcaption>
 </figure>
@@ -243,16 +332,16 @@ export const Home = () => {
         <p>Some representative placeholder content for the second slide.</p>
       </div>
     </div>
-    <div class="carousel-item">
-    <figure class="text-center">
-  <blockquote class="blockquote">
+    <div className="carousel-item">
+    <figure className="text-center">
+  <blockquote className="blockquote">
     <p>A well-known quote, contained in a blockquote element.</p>
   </blockquote>
-  <figcaption class="blockquote-footer">
+  <figcaption className="blockquote-footer">
     Someone famous in <cite title="Source Title">Source Title</cite>
   </figcaption>
 </figure>
-      <div class="carousel-caption d-none d-md-block">
+      <div className="carousel-caption d-none d-md-block">
         <h5>Third slide label</h5>
         <p>Some representative placeholder content for the third slide.</p>
       </div>
