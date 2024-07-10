@@ -21,22 +21,28 @@ import { TeacherChangePassword } from './Teacher/TeacherChangePassword'
 import { TeacherProfileSEttings } from './Teacher/TeacherProfileSEttings'
 import { MYTeachercourse } from './Teacher/MYTeachercourse'
 import { AddCourse } from './Teacher/AddCourse'
-import { MYUsers } from './Teacher/MYUsers'
+import {  UserList } from './Teacher/MYUsers'
 import { Allcourses } from './AllCourses/Allcourses'
 import { PopularCourses } from './AllCourses/PopularCourses'
 import { PopularTeachers } from './Teacher/PopularTeachers'
-import { Categorycourses } from './AllCourses/Categorycourses'
+
 import { Teacherlogout } from './Teacher/Teacherlogout'
 import { AddChapter } from './Teacher/AddChapter'
 import { AllChapters } from './AllCourses/AllChapters'
+import { EditChapter } from './AllCourses/EditChapter'
+import { EditCourse } from './AllCourses/EditCourse'
+import CategoryCourses from './AllCourses/Categorycourses'
+import { Studetlogout } from './Stduent/Logout'
+import { EnrolledStudents } from './Stduent/EnrolledStudents'
 export const Main = () => {
   return (
     <div>
       <Header/>
       <Switch>
         <Route path="/" element={<Home/>}/>
-        <Route path="/detail/:course_id" element={<CourseDetail/>}/>
+        <Route path="/detail/:courseId" element={<CourseDetail/>}/>
         <Route path="/user-login" element={<Login/>}/>
+        <Route path="/student-logout" element={<Studetlogout/>}/>
         <Route path="/user-register" element={<Register/>}/>
         <Route path="/user-dashboard" element={<Dashboard/>}/>
         <Route path="/my-courses" element={<Mycourses/>}/>
@@ -51,15 +57,19 @@ export const Main = () => {
         <Route path="/teacher-profile-settings" element={<TeacherProfileSEttings/>}/>
         <Route path="/teacher-my-course" element={<MYTeachercourse/>}/>
         <Route path="/teacher-add-course" element={<AddCourse/>}/>
-        <Route path="/teacher-my-users" element={<MYUsers/>}/>
-        <Route path="/teacher-detail/:teacher_id" element={<DetailTeacher/>}/>
+        <Route path="/teacher-my-users" element={<UserList/>}/>
+        <Route path="/teacher-detail/:teacherId" element={<DetailTeacher/>}/>
         <Route path="/all-courses" element={<Allcourses/>}/>
         <Route path="/popular-courses" element={<PopularCourses/>}/>
         <Route path="/popular-teachers" element={<PopularTeachers/>}/>
-        <Route path="/category/:category_slug" element={<Categorycourses/>}/>
+        <Route path="/category/:category_slug" element={<CategoryCourses/>}/>
         <Route path="/teacher-logout" element={<Teacherlogout/>}/>
         <Route path="/teacher-add-chapter/:courseId" element={<AddChapter/>}/>
         <Route path="/teacher-all-chapter/:courseId" element={<AllChapters/>}/>
+        <Route path="/teacher-edit-chapter/:chapterId" element={<EditChapter/>}/>
+        <Route path="/teacher-edit-course/:courseId" element={<EditCourse/>}/>
+        <Route path="/enrolled-students/:courseId" element={<EnrolledStudents/>}/>
+
 
     
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 export const Header = () => {
 
   const teacherLoginStatus=localStorage.getItem('teacherLoginStatus')
+  const studentLoginStatus=localStorage.getItem('studentLoginStatus')
 
   return (
 
@@ -39,10 +40,14 @@ export const Header = () => {
           USER
           </a>
           <ul className="dropdown-menu">
+          {studentLoginStatus!=='true' && 
+          <>
             <li><Link className="dropdown-item" to="/user-login">Login</Link></li>
             <li><Link className="dropdown-item" to="user-register">Register</Link></li>
-            <li><Link className="dropdown-item" to="/user-dashboard">Dash board</Link></li>
-            <li><Link className="dropdown-item" to="/user-logout">Logout</Link></li>
+            </>
+            }
+            <li><Link className="dropdown-item" to="/student-dashboard">Dash board</Link></li>
+            <li><Link className="dropdown-item" to="/student-logout">Logout</Link></li>
             
           </ul>
         </li>

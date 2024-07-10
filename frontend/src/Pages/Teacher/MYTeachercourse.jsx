@@ -35,13 +35,14 @@ export const MYTeachercourse = () => {
         </aside>
         <section className='col-md-9'>
         <div className='card mt-4'>
+        
                     <h5 className='card-header'>My courses</h5>
                     <div className='card-body'>
                         <table className='table table-bordered'>
                             <thead ><tr>
                                 <th>Name</th>
                                 <th>Image</th>
-                                <th>created by</th>
+                                <th>Total Enrollment</th>
                                 <th>action</th>
                                 </tr>
                             </thead>
@@ -50,11 +51,12 @@ export const MYTeachercourse = () => {
 
                                 <tr key={index}>
                                 <td><Link to={'/teacher-all-chapter/'+course.id}>{course.title}</Link></td>
-                                <td><img src={course.featured_img}  width='80' className='rounded'alt={course.featured_img} /></td>
-                                <td><Link to=''> created</Link></td>
+                                <td><img src={course.featured_img}  width='80' className='rounded'alt={course.title} /></td>
+                            <td><Link to={'/enrolled-students/'+course.id}><h3> {course.total_enrolled_students} </h3></Link></td>
                                 <td>
                                     <button className='btn btn-danger btn-sm  '> DELETE</button>
                                     <Link className='btn btn-success btn-sm ml-3 mt-2' to={'/teacher-add-chapter/'+course.id}>Add chapter</Link>
+                                    <Link className='btn btn-info btn-sm ml-3 mt-2' to={'/teacher-edit-course/'+course.id}>Edit</Link>
                                 </td>
                                 </tr>
                                 )}

@@ -7,7 +7,7 @@ const baseURL = 'http://127.0.0.1:8000/api/v1/course';
 export const AddCourse = () => {
     const [cats, setCats] = useState([]);
     const [courseData, setCourseData] = useState({
-        category: "",
+        category: '',
         title: '',
         description: '',
         f_img: null,

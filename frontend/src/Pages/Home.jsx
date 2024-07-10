@@ -1,63 +1,53 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import { useEffect } from 'react'
+
+
+
 import { Allcourses } from './AllCourses/Allcourses'
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import axios from 'axios';
+const baseURL = 'http://127.0.0.1:8000/api/v1';
+
 export const Home = () => {
-  useEffect(()=>{
-    document.title='Home Page'
-  })
+  const [courseData, setCourseData] = useState([]);
+
+  useEffect(() => {
+    document.title = ' Home';
+    try {
+      axios.get(baseURL + '/course').then((res) => {
+        setCourseData(res.data);
+      });
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
+
   return (
-    <div className='containe mt-4'>
+    <div className='containe mt-4 ml-3'>
       
        {/* latest courser*/}
       <h3 className=' pb-1 mb-4'>latest courses
         <Link to="/all-courses" className='float-end'>See all</Link>
       </h3>
-     
-      <div className='row'>
-     <div className='col-md-3'>
-     <div className="card ">
-     <Link to='/detail/1'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></Link>
-      <div className="card-body">
-        <h5 className="card-title">
-          <Link to='/detail/1'>Course title</Link>
-          </h5>
-     
-      </div>
-      
-    </div>
-     </div>
-     <div className='col-md-3'>
-     <div className="card ">
-     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
-      <div className="card-body">
-        <h5 className="card-title">
-          <a href='#'>Course title</a>
-          </h5>
-     
-      </div>
-     
-    </div>
-     </div>
-     <div className='col-md-3'>
-     <div className="card ">
-     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
-     
-     
-    </div>
-     </div>
-     <div className='col-md-3'>
-     <div className="card ">
-     <a href='#'> <img src="https://imgs.search.brave.com/BMuYABP7oP4l8HymmSOQIH30nF_YQMtJm-y7Bz-vc6Q/rs:fit:500:0:0/g:ce/aHR0cHM6Ly9idXJz/dC5zaG9waWZ5Y2Ru/LmNvbS9waG90b3Mv/dHdvLXRvbmUtaW5r/LWNsb3VkLmpwZz93/aWR0aD0xMDAwJmZv/cm1hdD1wanBnJmV4/aWY9MCZpcHRjPTA" className="card-img-top" alt="..."/></a>
-      <div className="card-body">
-        <h5 className="card-title">
-          <a href='#'>Course title</a>
-          </h5>
-     
-      </div>
-   
-    </div>
-     </div>
+      <div className='row mb-4'>
+        {courseData && courseData.map((course, index) => (
+          <div className='col-md-3 mb-3' key={index}>
+            <div className="card">
+              <Link to={`/detail/${course.id}`}>
+                <img
+                  src={course.featured_img}
+                  className="card-img-top"
+                  alt={course.title}
+                  style={{ width: '100%', height: '200px', objectFit: 'cover' }}
+                />
+              </Link>
+              <div className="card-body">
+                <h5 className="card-title">
+                  <Link to={`/detail/${course.id}`}>{course.title}</Link>
+                </h5>
+              </div>
+            </div>
+          </div>
+        ))}
       </div>
        {/* latest courser*/}
 
